@@ -58,7 +58,6 @@
 	}
 	
 </style>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 <body>
 	<div class="form_content" align="center">
@@ -113,7 +112,9 @@
         </table>
     </div>
 </body>
-<script type="application/ecmascript">
+
+<script type="application/javascript" src="src/jquery-3.5.0.min.js"></script>
+<script type="application/javascript">
 	$('#go-estimate').on('click', function(){
 			var formdata = {};
 			// validate fields
