@@ -76,7 +76,7 @@ function hospitalBedsByRequestedTime ($totalHospitalBeds, $severeCases)
 {
 	$availableBeds = 0.35 * $totalHospitalBeds;
 	
-	return intval($availableBeds>$severeCases? $availableBeds : $availableBeds - $severeCases);
+	return floor($availableBeds>$severeCases? $availableBeds : $availableBeds - $severeCases);
 }
 
 
