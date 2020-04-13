@@ -1,0 +1,4 @@
+RewriteEngine On
+
+#Assume all domain calls include index.php
+RewriteRule ^(.*)$ /index.php/$1 [L]
