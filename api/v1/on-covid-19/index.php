@@ -1,3 +1,3 @@
 <?php
 	# Default to json output file
-	include_once('json/index.php');
+	include_once('json.php');

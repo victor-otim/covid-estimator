@@ -1,4 +1,8 @@
 RewriteEngine On
 
-#Assume all domain calls include index.php
-RewriteRule ^(.*)$ /index.php/$1 [L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^api/v1/on-covid-19/json$ api/v1/on-covid-19/json.php [L]
+RewriteRule ^api/v1/on-covid-19/xml$ api/v1/on-covid-19/xml.php [L]
+RewriteRule ^api/v1/on-covid-19/logs$ api/v1/on-covid-19/logs.php [L]

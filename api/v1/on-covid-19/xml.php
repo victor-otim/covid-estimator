@@ -5,8 +5,7 @@
 	header("Access-Control-Max-Age: 3600");
 	header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 	
-	#include_once($_SERVER['DOCUMENT_ROOT'] .'/covid_estimator/covid-19-estimator-php/src/estimator.php');	
-	
+	#include_once($_SERVER['DOCUMENT_ROOT'] .'/covid-estimator/src/estimator.php');	
 	include_once($_SERVER['DOCUMENT_ROOT'] .'/src/estimator.php');
 	
 	$httpMethod = $_SERVER['REQUEST_METHOD'];
@@ -62,4 +61,4 @@
 	# log response
 	$logStr = $httpMethod ."\t\t". $requestPath ."\t\t". $response ."\t\t". $responseTime .' ms'. PHP_EOL;
 	
-	file_put_contents(BASEPATH .'api/v1/on-covid-19/logs/log.txt', $logStr, FILE_APPEND);
+	file_put_contents(BASEPATH .'api/v1/on-covid-19/log.txt', $logStr, FILE_APPEND);
