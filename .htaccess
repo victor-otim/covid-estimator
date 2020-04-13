@@ -1,5 +1,10 @@
 RewriteEngine On
 
+<IfModule http2_module>
+    LogLevel http2:info
+    Protocols h2 h2c http/1.1
+</IfModule>
+
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
