@@ -30,6 +30,7 @@ function covid19ImpactEstimator($data)
 function timeFactor ($timeToElapse = 0, $periodType = 'days')
 {
 	$factor = 0;
+	
 	$days = 0;
 	
 	switch($periodType):
