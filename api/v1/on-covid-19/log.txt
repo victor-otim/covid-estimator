@@ -1,0 +1,1 @@
+POST		/covid-estimator/api/v1/on-covid-19/json		200		0.0010581016540527 ms

@@ -1,7 +1,7 @@
 <?php
-#define('BASEPATH', $_SERVER['DOCUMENT_ROOT'] .'/');
+define('BASEPATH', $_SERVER['DOCUMENT_ROOT'] .'/');
 
-define('BASEPATH', $_SERVER['DOCUMENT_ROOT'] .'/covid-estimator/');
+#define('BASEPATH', $_SERVER['DOCUMENT_ROOT'] .'/covid-estimator/');
 
 function covid19ImpactEstimator($data)
 {
