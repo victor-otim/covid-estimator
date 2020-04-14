@@ -1,4 +1,3 @@
-
 <?php
 	header("Access-Control-Allow-Origin: *");
 	header("Content-Type: application/xml; charset=UTF-8");
@@ -36,11 +35,9 @@
 	
 	$xml = new SimpleXMLElement('<?xml version="1.0"?><root></root>');
 	
-	$data = json_decode(file_get_contents("php://input"));
-	
-	if(!empty($data)):
+	if(!empty($_POST)):
 		
-		$estimates = covid19ImpactEstimator($data);
+		$estimates = covid19ImpactEstimator($_POST);
 		
 		$response = 200;
 		
