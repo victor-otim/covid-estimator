@@ -1,0 +1,13 @@
+RewriteEngine On
+
+<IfModule http2_module>
+    LogLevel http2:info
+    Protocols h2 h2c http/1.1
+</IfModule>
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^api/v1/on-covid-19/json$ api/v1/on-covid-19/json.php [L]
+RewriteRule ^api/v1/on-covid-19/xml$ api/v1/on-covid-19/xml.php [L]
+RewriteRule ^api/v1/on-covid-19/logs$ api/v1/on-covid-19/logs.php [L]
