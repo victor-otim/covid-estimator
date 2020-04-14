@@ -38,11 +38,9 @@
 	
 	print json_encode($estimates);	
 		
-	$responseTime = str_pad(microtime(true) - $startTime, 2, '0', STR_PAD_LEFT);
+	$responseTime = round(microtime(true) - $startTime, 2);
 	
 	# log response
-	$logStr = str_pad($httpMethod, 4, ' ', STR_PAD_RIGHT) ."\t\t".
-			  str_pad($requestPath, 24, ' ', STR_PAD_RIGHT) ."\t\t". 
-			  str_pad($response, 3, ' ', STR_PAD_RIGHT) ."\t\t". $responseTime .'ms'. PHP_EOL;
+	$logStr = formatLogStr($httpMethod, $requestPath, $response, $responseTime);
 	
 	file_put_contents(BASEPATH .'api/v1/on-covid-19/log.txt', $logStr, FILE_APPEND);

@@ -119,6 +119,15 @@ function severeImpact($data)
 	return $severeImpact;
 }
 
+function formatLogStr($httpMethod, $requestPath, $response, $responseTime)
+{
+	$responseTime = str_pad($responseTime , 2, '0', STR_PAD_LEFT);
+	
+	return str_pad($httpMethod, 4, ' ', STR_PAD_RIGHT) ."\t\t".
+			str_pad($requestPath, 24, ' ', STR_PAD_RIGHT) ."\t\t". 
+			str_pad($response, 3, ' ', STR_PAD_RIGHT) ."\t\t". $responseTime .'ms'. PHP_EOL;
+}
+
 
 # handle form post
 if(!empty($_POST['goestimate'])):
