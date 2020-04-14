@@ -16,7 +16,7 @@
 	
 	$responseTime = '';
 	
-	$startTime = microtime(true);
+	$startTime = microtime();
 	
 	function array_to_xml( $data, &$xml_data ) {
 		
@@ -58,7 +58,7 @@
 	print $xml->asXML();
 	
 	
-	$responseTime = str_pad(round(microtime(true) - $startTime, 2) , 2, '0', STR_PAD_LEFT);
+	$responseTime = round(microtimeDiff($startTime), 2);
 	
 	# log response
 	$logStr = formatLogStr($httpMethod, $requestPath, $response, $responseTime);

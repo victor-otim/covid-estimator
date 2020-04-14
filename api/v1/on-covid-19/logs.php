@@ -5,9 +5,9 @@
 	header("Access-Control-Max-Age: 3600");
 	header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 	
-	#include_once($_SERVER['DOCUMENT_ROOT'] .'/covid-estimator/src/estimator.php');
+	include_once($_SERVER['DOCUMENT_ROOT'] .'/covid-estimator/src/estimator.php');
 	
-	include_once($_SERVER['DOCUMENT_ROOT'] .'/src/estimator.php');
+	#include_once($_SERVER['DOCUMENT_ROOT'] .'/src/estimator.php');
 	
 	$handle = fopen(BASEPATH .'api/v1/on-covid-19/log.txt', "r");
 	

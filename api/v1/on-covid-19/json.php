@@ -16,7 +16,7 @@
 	
 	$responseTime = '';
 	
-	$startTime = microtime(true);
+	$startTime = microtime();
 	
 	$data = json_decode(file_get_contents("php://input"), true);
 			
@@ -38,7 +38,7 @@
 	
 	print json_encode($estimates);	
 		
-	$responseTime = round(microtime(true) - $startTime, 2);
+	$responseTime = round(microtimeDiff($startTime), 2);
 	
 	# log response
 	$logStr = formatLogStr($httpMethod, $requestPath, $response, $responseTime);
