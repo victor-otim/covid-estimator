@@ -17,10 +17,12 @@
 	$responseTime = '';
 	
 	$startTime = microtime(true);
+	
+	$data = json_decode(file_get_contents("php://input"));
 		
-	if(!empty($_POST)):
+	if(!empty($data)):
 		
-		$estimates = covid19ImpactEstimator($_POST);
+		$estimates = covid19ImpactEstimator($data);
 		
 		$response = 200;
 		
