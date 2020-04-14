@@ -36,10 +36,9 @@
 	
 	http_response_code($response);
 	
-	print json_encode($estimates);
-	
+	print json_encode($estimates);	
 		
-	$responseTime = round(microtime(true) - $startTime, 2);
+	$responseTime = str_pad(microtime(true) - $startTime, 2, '0', STR_PAD_LEFT);
 	
 	# log response
 	$logStr = $httpMethod ."\t\t". $requestPath ."\t\t". $response ."\t\t". $responseTime .'ms'. PHP_EOL;
