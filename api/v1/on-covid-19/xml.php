@@ -61,6 +61,8 @@
 	$responseTime = str_pad(microtime(true) - $startTime, 2, '0', STR_PAD_LEFT);
 	
 	# log response
-	$logStr = $httpMethod ."\t\t". $requestPath ."\t\t". $response ."\t\t". $responseTime .'ms'. PHP_EOL;
+	$logStr = str_pad($httpMethod, 4, ' ', STR_PAD_RIGHT) ."\t\t".
+			  str_pad($requestPath, 24, ' ', STR_PAD_RIGHT) ."\t\t". 
+			  str_pad($response, 3, ' ', STR_PAD_RIGHT) ."\t\t". $responseTime .'ms'. PHP_EOL;
 	
 	file_put_contents(BASEPATH .'api/v1/on-covid-19/log.txt', $logStr, FILE_APPEND);
