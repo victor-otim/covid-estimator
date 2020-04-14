@@ -35,10 +35,11 @@
 	
 	$xml = new SimpleXMLElement('<?xml version="1.0"?><root></root>');
 	
+	$data = json_decode(file_get_contents("php://input"), true);
 	
-	if(!empty($_POST)):
+	if(!empty($data)):
 		
-		$estimates = covid19ImpactEstimator($_POST);
+		$estimates = covid19ImpactEstimator($data);
 		
 		$response = 200;
 		
