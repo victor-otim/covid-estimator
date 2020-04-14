@@ -58,7 +58,7 @@
 	print $xml->asXML();
 	
 	
-	$responseTime = microtime(true) - $startTime;
+	$responseTime = round(microtime(true) - $startTime, 2);
 	
 	# log response
 	$logStr = $httpMethod ."\t\t". $requestPath ."\t\t". $response ."\t". $responseTime .' ms'. PHP_EOL;
