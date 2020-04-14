@@ -5,17 +5,11 @@ define('BASEPATH', $_SERVER['DOCUMENT_ROOT'] .'/');
 
 function covid19ImpactEstimator($data)
 {
-	#default values
+	#default region values
 	if(empty($data['region']['name'])) $data['region']['name'] = 'Africa'; 
 	if(empty($data['region']['avgAge'])) $data['region']['avgAge'] = 19.7; 
 	if(empty($data['region']['avgDailyIncomeInUSD'])) $data['region']['avgDailyIncomeInUSD'] = 1.5; 
 	if(empty($data['region']['avgDailyIncomePopulation'])) $data['region']['avgDailyIncomePopulation'] = 0.65;
-	
-	if(empty($data['periodType'])) $data['periodType'] = 'days'; 
-	if(empty($data['timeToElapse'])) $data['timeToElapse'] = 58; 
-	if(empty($data['reportedCases'])) $data['reportedCases'] = 674; 
-	if(empty($data['population'])) $data['population'] = 66622705; 
-	if(empty($data['totalHospitalBeds'])) $data['totalHospitalBeds'] = 1380614; 
 	
 	$estimates['data'] = $data;
 	
